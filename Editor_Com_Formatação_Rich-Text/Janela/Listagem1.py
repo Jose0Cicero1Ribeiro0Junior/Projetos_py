@@ -6,6 +6,9 @@ Font – Família da fonte do texto;
 Fg – Cor do texto do widget;
 Bg – Cor de fundo do widget;
 Side – Define em que lado o widget se posicionará (Left, Right, Top, Bottom).
+
+
+Para receber dados do usuário vamos usar o widget 'Entry'
 """
 
 import tkinter as tk
@@ -16,14 +19,14 @@ class Application:
         self.widget1.pack()
         # Titulo
         self.msg = Label(self.widget1, text='Primeiro widget')
-        self.msg["font"] = ("Verdana", "10", "italic", "bold")
+        self.msg["font"] = ("Calibre", "9", "italic")
         self.msg.pack()
         # Botão
         self.sair = Button(self.widget1)
-        self.sair["text"] = "Sair"
-        self.sair["font"] = ("Calibri", "10")
-        self.sair["width"] = 5
-        self.sair["command"] = self.widget1.quit
+        self.sair["text"] = "Clique aqui"
+        self.sair["font"] = ("Calibri", "9")
+        self.sair["width"] = 10
+        self.sair.bind("<Button-1>", self.mudarTexto)
         self.sair.pack()
                 
 
